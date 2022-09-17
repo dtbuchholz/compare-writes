@@ -46,3 +46,47 @@ https://mumbai.polygonscan.com/tx/0x984c24966b538c4f659d58d8a55772eaff491d40e95c
 ```
 
 And lastly, view the results from the runs here: [compare_results table query](https://testnet.tableland.network/query?s=select%20*%20from%20compare_results_80001_2028)
+
+## Sample results
+
+```
+Using direct
+
+---
+
+Run #1: 11.152 seconds
+Run #2: 9.737 seconds
+Run #3: 10.104 seconds
+Run #4: 10.060 seconds
+Run #5: 9.872 seconds
+Run #6: 9.421 seconds
+Run #7: 10.011 seconds
+Run #8: 9.636 seconds
+Run #9: 14.497 seconds
+Run #10: 14.033 seconds
+Run #11: 14.010 seconds
+Run #12: 9.994 seconds
+Run #13: 9.486 seconds
+Run #14: 9.889 seconds
+Run #15: 9.750 seconds
+
+Using SDK
+
+---
+
+Run #1: 12.732 seconds
+Run #2: 24.378 seconds
+Run #3: 24.239 seconds
+Run #4: 24.233 seconds
+Run #5: 24.090 seconds
+Run #6: 23.963 seconds
+Run #7: 24.023 seconds
+Run #8: 23.987 seconds
+Run #9: 24.152 seconds
+Run #10: 11.838 seconds
+Run #11: 23.983 seconds
+Run #12: 24.181 seconds
+Run #13: 23.775 seconds
+Run #14: 24.742 seconds
+Run #15: 23.899 seconds
+```
