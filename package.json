@@ -1,0 +1,22 @@
+{
+	"name": "client-comparison",
+	"version": "1.0.0",
+	"description": "Run the following:",
+	"author": "Dan Buchholz <dbuchholz30@gmail.com>",
+	"license": "MIT",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"start": "node index.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"@tableland/sdk": "^3.1.2",
+		"dotenv": "^16.0.1",
+		"ethers": "^5.7.0",
+		"fs": "^0.0.1-security"
+	},
+	"devDependencies": {
+		"@types/node": "^18.7.1"
+	}
+}
