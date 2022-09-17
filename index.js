@@ -20,6 +20,20 @@ async function main() {
 	const choice = args[0]
 	const runs = args[1]
 	const statement = args[2]
+	let tableName
+	const queryType = statement.split(" ")[0]
+	switch (queryType) {
+		case "insert":
+		case "delete":
+			tableName = statement.split(" ")[2]
+			break
+		case "update":
+			tableName = statement.split(" ")[1]
+			break
+		default:
+			throw new Error("Invalid statement: could not parse table name")
+	}
+	const tableId = tableName.split("_").pop()
 	const compareResultsTable = "compare_results_80001_2028" // Used to track the elapsed time data
 	let results = ""
 	let startTime
@@ -48,8 +62,8 @@ async function main() {
 			for (let i = 1; i <= runs; i++) {
 				startTime = process.hrtime()
 				const gasPrice = await provider.getGasPrice()
-				const estimatedGasLimit = await tbl.estimateGas.runSQL(signer.address, 2010, statement)
-				const approveTxUnsigned = await tbl.populateTransaction.runSQL(signer.address, 2010, statement)
+				const estimatedGasLimit = await tbl.estimateGas.runSQL(signer.address, tableId, statement)
+				const approveTxUnsigned = await tbl.populateTransaction.runSQL(signer.address, tableId, statement)
 				approveTxUnsigned.chainId = chainId
 				approveTxUnsigned.gasLimit = estimatedGasLimit
 				approveTxUnsigned.gasPrice = gasPrice

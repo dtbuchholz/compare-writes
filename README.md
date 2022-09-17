@@ -1,6 +1,6 @@
 # Instructions
 
-The idea is to pass a single statement, and this same statement is written to a table X number of times. You specifiy a "choice" for `sdk` or `direct`, then number of `runs`, and the `statement` itself. Once the data is written using the specified choice, the output data is written to a table called `compare_results_80001_2028` with allow-all write access.
+The idea is to pass a single statement, and this same statement is written to a table X number of times. You specifiy a "choice" for `sdk` or `direct`, then number of `runs`, and the `statement` itself. Once the data is written using the specified choice, the output data is written to a table called [`compare_results_80001_2028`](https://testnet.tableland.network/query?s=select%20*%20from%20compare_results_80001_2028) with allow-all write access (using a controller at [0x16cd7eFAE942037C4711994E87Ce3285Fe65F807](https://mumbai.polygonscan.com/address/0x16cd7eFAE942037C4711994E87Ce3285Fe65F807#code)).
 
 ## Setup
 
@@ -12,7 +12,7 @@ The idea is to pass a single statement, and this same statement is written to a 
 Run the following, which writes to an allow-all-inserts table `compare_results_80001_2028`:
 
 ```shell
-node index.js <choice> <runs> <statment>
+node index.js <choice> <runs> <statement>
 ```
 
 - `choice`: Either `sdk` or `direct`
@@ -21,7 +21,7 @@ node index.js <choice> <runs> <statment>
 
 ## Examples
 
-Make a `write` call with the SDK 1 time, which logs the total elapsed time.
+Make a `write` call with the SDK 1 time, which logs the total elapsed time:
 
 ```shell
 > node index.js sdk 1 "insert into acl_80001_2010 (name) values ('sdk')"
